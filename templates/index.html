@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medical Assistant Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #c2e9fb, #d4fc79);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #00796b;
+        }
+
+        label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        textarea, input[type="submit"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        textarea::placeholder {
+            color: #888;
+            font-style: italic;
+        }
+
+        input[type="submit"] {
+            background-color: #00796b;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+
+        .response {
+            margin-top: 20px;
+            background-color: #e0f7fa;
+            padding: 15px;
+            border-radius: 5px;
+            white-space: pre-line;
+            border-left: 5px solid #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🩺 Medical Assistant Chatbot</h2>
+        <form method="post">
+            <label>Ask a medical question:</label>
+            <textarea name="user_input" rows="4" placeholder="Enter your medical question here..." required></textarea>
+            <input type="submit" value="Ask">
+        </form>
+
+        {% if response %}
+        <div class="response">
+            <strong>🤖 Response:</strong><br>
+            {{ response }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
