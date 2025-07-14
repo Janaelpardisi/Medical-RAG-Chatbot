@@ -5,3 +5,4 @@ google-generativeai
 keras==2.11.0
 tf-keras
 flask
+python-dotenv
